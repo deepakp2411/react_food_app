@@ -6,6 +6,33 @@ import { Link } from "react-router-dom";
 import "../styles/hero-section.css";
 import Category from "../components/UI/category/Category";
 import "../styles/home.css";
+import featureImg01 from "../assets/images/service-01.png";
+import featureImg02 from "../assets/images/service-02.png";
+import featureImg03 from "../assets/images/service-03.png";
+
+import products from '../assets/fake-data/products'
+
+import foodCategory01 from '../assets/images/hamburger.png'
+import foodCategory02 from '../assets/images/pizza.png'
+import foodCategory03 from '../assets/images/bread.png'
+
+const featureData = [
+  {
+    title: "Quick Deleivery",
+    imgUrl: featureImg01,
+    desc: "lorem ipsum dolor,sit maet consecuter, adipissing elit",
+  },
+  {
+    title: "Super Dine",
+    imgUrl: featureImg02,
+    desc: "lorem ipsum dolor,sit maet consecuter, adipissing elit",
+  },
+  {
+    title: "Easy to pick",
+    imgUrl: featureImg03,
+    desc: "lorem ipsum dolor,sit maet consecuter, adipissing elit",
+  },
+];
 const Home = () => {
   return (
     <Helmet title="Home">
@@ -80,17 +107,42 @@ const Home = () => {
               </p>
               <p className="feature__text">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Pariatur, aliquam! {" "}
+                Pariatur, aliquam!{" "}
               </p>
             </Col>
 
-            <Col lg='4' md='4' sm='4'>
-            <div className="feature__item">
+            {featureData.map((item, index) => (
+              <Col lg="4" md="4" sm="4" key={index} classNamemt-5>
+                <div className="feature__item text-center px-4 py-3">
+                  <img
+                    src={item.imgUrl}
+                    alt="feature-img"
+                    className="w-25 mb-3"
+                  />
+                  <h5 className="fw-bold mb-3">{item.title}</h5>
+                  <p>{item.desc}</p>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
 
-            </div>
-
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h2>Popular Foods</h2>
             </Col>
-            
+
+            <Col lg='12'>
+              <div className="food__category">
+                <button className="all__btn">All</button>
+                <button><img src={foodCategory01} alt="food-category" />Burger</button>
+                <button><img src={foodCategory02} alt="food-category" />Pizza</button>
+                <button><img src={foodCategory03} alt="food-category" />Bread</button>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
