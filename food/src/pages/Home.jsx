@@ -2,8 +2,10 @@ import React from "react";
 import Helmet from "../components/Helmet/Helmet";
 import { Container, Row, Col } from "reactstrap";
 import heroImg from "../assets/images/hero.png";
-import {Link} from 'react-router-dom'
-import '../styles/hero-section.css'
+import { Link } from "react-router-dom";
+import "../styles/hero-section.css";
+import Category from "../components/UI/category/Category";
+import "../styles/home.css";
 const Home = () => {
   return (
     <Helmet title="Home">
@@ -14,7 +16,8 @@ const Home = () => {
               <div className="hero__content">
                 <h5 className="mb-3">Easy way to make an order</h5>
                 <h1 className="mb-4 hero__title">
-                  <span>HUNGRY?</span> Just wait <br /> food at<span> your door</span>
+                  <span>HUNGRY?</span> Just wait <br /> food at
+                  <span> your door</span>
                 </h1>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -22,9 +25,30 @@ const Home = () => {
                 </p>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
-                  <button className="order__btn d-flex align-items-center justify-content-between">Order now <i className="ri-arrow-right-s-line"></i></button>
+                  <button className="order__btn d-flex align-items-center justify-content-between">
+                    Order now <i className="ri-arrow-right-s-line"></i>
+                  </button>
 
-                  <button className="all__foods-btn"><Link to='/foods' className="text-decoration-none">See all Foods</Link></button>
+                  <button className="all__foods-btn">
+                    <Link to="/foods" className="text-decoration-none">
+                      See all Foods
+                    </Link>
+                  </button>
+                </div>
+
+                <div className="hero__service d-flex align-items-center gap-5 mt-5">
+                  <p className="d-flex align-items-center gap-2">
+                    <span className="shipping__icon">
+                      <i className="ri-car-line"></i>
+                    </span>{" "}
+                    No shipping charge
+                  </p>
+                  <p className="d-flex align-items-center gap-2">
+                    <span className="shipping__icon">
+                      <i className="ri-car-line"></i>
+                    </span>
+                    100% secure checkout
+                  </p>
                 </div>
               </div>
             </Col>
@@ -34,6 +58,39 @@ const Home = () => {
                 <img src={heroImg} alt="hero" className="w-100" />
               </div>
             </Col>
+          </Row>
+        </Container>
+      </section>
+      <section>
+        <Category />
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h5 className="feature__subtitle mb-4">What we serve</h5>
+              <h2 className="feature__title">Just sit back home</h2>
+              <h2 className="feature__title">
+                we will <span>take care</span>
+              </h2>
+              <p className="mb-1 mt-4 feature__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+                dignissimos
+              </p>
+              <p className="feature__text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Pariatur, aliquam! {" "}
+              </p>
+            </Col>
+
+            <Col lg='4' md='4' sm='4'>
+            <div className="feature__item">
+
+            </div>
+
+            </Col>
+            
           </Row>
         </Container>
       </section>

@@ -17,3 +17,41 @@
     color: #772;
 
 }
+.hero__btns button{
+    border: none;
+    outline: none;
+    padding: 7px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.order__btn{
+    background-color: #df2020;
+    color: white;
+    transition: all 0.4s;
+}
+.order__btn:hover{
+    background: #212245;
+}
+.all__food-btn{
+    background: transparent;
+    border: 1px solid #df2020 !important;
+}
+.all__food-btn a{
+    color: #df2020;
+}
+
+.hero__service p{
+    color: #212245;
+    font-weight: 600;
+    font-size: .9rem;
+}
+.shipping__icon i{
+    padding: 5px;
+    background-color: #df2020;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 500 !important;
+
+    
+}
