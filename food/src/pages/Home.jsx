@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Helmet from "../components/Helmet/Helmet";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, ListGroupItem, ListGroup } from "reactstrap";
 import heroImg from "../assets/images/hero.png";
 import { Link } from "react-router-dom";
 import "../styles/hero-section.css";
@@ -17,8 +17,8 @@ import foodCategory02 from "../assets/images/pizza.png";
 import foodCategory03 from "../assets/images/bread.png";
 
 import ProductCard from "../components/UI/product-card/ProductCard";
-import { useState } from "react";
-import { useEffect } from "react";
+
+import whyImg from "../assets/images/location.png";
 
 const featureData = [
   {
@@ -168,27 +168,35 @@ const Home = () => {
             <Col lg="12">
               <div className="food__category d-flex align-items-center justify-content-center gap-4">
                 <button
-                  className={`all__btn ${category === 'All'? 'foodBtnActive':''}`}
+                  className={`all__btn ${
+                    category === "All" ? "foodBtnActive" : ""
+                  }`}
                   onClick={() => setCategory("All")}
                 >
                   All
                 </button>
                 <button
-                  className={`d-flex align-items-center gap-2 ${category === 'BURGER'? 'foodBtnActive':''}`}
+                  className={`d-flex align-items-center gap-2 ${
+                    category === "BURGER" ? "foodBtnActive" : ""
+                  }`}
                   onClick={() => setCategory("BURGER")}
                 >
                   <img src={foodCategory01} alt="food-category" />
                   Burger
                 </button>
                 <button
-                  className={`d-flex align-items-center gap-2 ${category === 'PIZZA'? 'foodBtnActive':''}`}
+                  className={`d-flex align-items-center gap-2 ${
+                    category === "PIZZA" ? "foodBtnActive" : ""
+                  }`}
                   onClick={() => setCategory("PIZZA")}
                 >
                   <img src={foodCategory02} alt="food-category" />
                   Pizza
                 </button>
                 <button
-                  className={`d-flex align-items-center gap-2 ${category === 'BREAD'? 'foodBtnActive':''}`}
+                  className={`d-flex align-items-center gap-2 ${
+                    category === "BREAD" ? "foodBtnActive" : ""
+                  }`}
                   onClick={() => setCategory("BREAD")}
                 >
                   <img src={foodCategory03} alt="food-category" />
@@ -201,6 +209,32 @@ const Home = () => {
                 <ProductCard item={item} />
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <img src={whyImg} alt="why-img" />
+            </Col>
+            <Col lg="6" md="6">
+              <div className="why__tasty-treat">
+                <h2 className="tasty__treat-title">Why Tatsy Treat</h2>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Neque dicta doloribus explicabo recusandae non dolorem quae
+                  vero ullam cumque voluptatum!
+                </p>
+                <ListGroup>
+                  <ListGroupItem>
+                    <i className="ri-checkbox-circle-line"></i>
+                    Fresh and tasty foods
+                  </ListGroupItem>
+                </ListGroup>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
