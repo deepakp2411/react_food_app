@@ -20,6 +20,9 @@ import ProductCard from "../components/UI/product-card/ProductCard";
 
 import whyImg from "../assets/images/location.png";
 
+import networkImg from "../assets/images/network.png";
+import TestimonialSlider from "../components/UI/slider/TestimonialSlider";
+
 const featureData = [
   {
     title: "Quick Deleivery",
@@ -40,6 +43,14 @@ const featureData = [
 const Home = () => {
   const [category, setCategory] = useState("All");
   const [allProducts, setAllProducts] = useState(products);
+
+  const [hotPizza, setHotPizza] = useState([]);
+
+  useEffect(() => {
+    const filterdPizza = products.filter((item) => item.category === "Pizza");
+    const slicePizza = filterdPizza.slice(0, 4);
+    setHotPizza(slicePizza);
+  }, []);
 
   useEffect(() => {
     if (category === "All") {
@@ -142,7 +153,7 @@ const Home = () => {
             </Col>
 
             {featureData.map((item, index) => (
-              <Col lg="4" md="4" sm="4" key={index} classNamemt-5>
+              <Col lg="4" md="6" sm="6" key={index} className='mt-5'>
                 <div className="feature__item text-center px-4 py-3">
                   <img
                     src={item.imgUrl}
@@ -205,7 +216,7 @@ const Home = () => {
               </div>
             </Col>
             {allProducts.map((item) => (
-              <Col lg="3" md="4" key={item.id} className="mt-5">
+              <Col lg="3" md="4" sm='6' xs='6' key={item.id} className="mt-5">
                 <ProductCard item={item} />
               </Col>
             ))}
@@ -217,23 +228,89 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="6" md="6">
-              <img src={whyImg} alt="why-img" />
+              <img src={whyImg} alt="why-img" className="w-100" />
             </Col>
             <Col lg="6" md="6">
               <div className="why__tasty-treat">
-                <h2 className="tasty__treat-title">Why Tatsy Treat</h2>
-                <p>
+                <h2 className="tasty__treat-title mb-4">
+                  Why <span>Tasty Treat?</span>{" "}
+                </h2>
+                <p className="tasty__treat-desc">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Neque dicta doloribus explicabo recusandae non dolorem quae
                   vero ullam cumque voluptatum!
                 </p>
-                <ListGroup>
-                  <ListGroupItem>
-                    <i className="ri-checkbox-circle-line"></i>
-                    Fresh and tasty foods
+                <ListGroup className="mt-5">
+                  <ListGroupItem className="border-0 ps-0">
+                    <p className="choose__us-title d-flex align-items-center gap-2">
+                      <i className="ri-checkbox-circle-line"></i>
+                      Fresh and tasty foods
+                    </p>
+                    <p className="choose__us-desc">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Quidem, at!
+                    </p>
+                  </ListGroupItem>
+                  <ListGroupItem className="border-0 ps-0">
+                    <p className="choose__us-title d-flex align-items-center gap-2">
+                      <i className="ri-checkbox-circle-line"></i>
+                      Quality support foods
+                    </p>
+                    <p className="choose__us-desc">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Quidem, at!
+                    </p>
+                  </ListGroupItem>
+                  <ListGroupItem className="border-0 ps-0">
+                    <p className="choose__us-title d-flex align-items-center gap-2">
+                      <i className="ri-checkbox-circle-line"></i>
+                      Order from any location{" "}
+                    </p>
+                    <p className="choose__us-desc">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Quidem, at!
+                    </p>
                   </ListGroupItem>
                 </ListGroup>
               </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="pt-0">
+        <Row>
+          <Col lg="12" className="text-center mb-5">
+            <h2>Hot Pizza</h2>
+          </Col>
+          {hotPizza.map((item) => (
+            <Col lg="3" md="4" key={item.id}>
+              <ProductCard item={item} />
+            </Col>
+          ))}
+        </Row>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <div className="testimonial ">
+                <h5 className="testimonial__subtitle mb-4">Testimoinal</h5>
+                <h2 className="testimonial__title mb-4">
+                  What our <span className="px-1">customers</span>are saying
+                </h2>
+                <p className="testimonial__desc">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Totam cupiditate perspiciatis temporibus quod itaque earum.
+                  Porro, repudiandae. Neque, est vero?
+                </p>
+                <TestimonialSlider />
+              </div>
+            </Col>
+
+            <Col lg="6" md="6">
+              <img src={networkImg} alt="networkImg" className="w-100" />
             </Col>
           </Row>
         </Container>

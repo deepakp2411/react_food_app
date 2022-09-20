@@ -3,9 +3,9 @@
   text-align: center;
   padding: 30px;
   cursor: pointer;
-  border-radius: 25px;
+  /* border-radius: 25px;
   background: #e0e0e0;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #fff;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #fff; */
 }
 
 .product__img {
@@ -42,4 +42,17 @@
 .addToCart__btn:hover{
     background: #777;
     transition: all .7s ease-in-out;
+}
+@media only screen and (max-width:768px) {
+  .product__content h5 a{
+    font-size: .9rem;
+  }
+  .product__item{
+    padding: 20px;
+  }
+  .addToCart__btn{
+    padding: 5px 15px;
+    font-size: .8rem;
+  }
+  
 }
