@@ -43,7 +43,7 @@
     background: #777;
     transition: all .7s ease-in-out;
 }
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:992px) {
   .product__content h5 a{
     font-size: .9rem;
   }

@@ -68,7 +68,7 @@
 .testimonial__title span{
     color: #df2020;
 }
-.estimonial__desc{
+.testimonial__desc{
     color: #777;
     line-height: 30px;
 }
@@ -113,6 +113,24 @@
         padding: 5px 15px;
         font-size: 0.8rem;
     }
+    .tasty__treat-desc{
+        font-size: 0.8rem;
+    }
+    .choose__us-title{
+        font-size: .8rem;
+    }
+    .choose__us-desc{
+        font-size: .7rem;
+    }
+    .why__choose-us{
+        padding-top: 0 !important;
+    }
+    .testimonial__subtitle{
+        font-size: 1rem;
+    }
+    .testimonial__desc{
+        font-size: .8rem;
+    }
 
 }
 
@@ -137,5 +155,8 @@
     
     .hero__service{
         justify-content: center;
+    }
+    .why__choose-us{
+        padding-top: 0 !important;
     }
 }
